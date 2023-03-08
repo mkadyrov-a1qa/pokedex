@@ -1,0 +1,33 @@
+.load-button {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(97, 195, 255);
+  border-radius: 15px;
+  cursor: pointer;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.search-label {
+  position: relative;
+  top: 8px;
+}
+
+.search-button {
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  background-color: rgb(97, 195, 255); 
+  color: white;
+}
+
+.label {
+  position: relative;
+  top: 15px;
+}

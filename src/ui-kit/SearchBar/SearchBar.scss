@@ -1,0 +1,28 @@
+.input {
+  position: relative;
+  appearance: none;
+  border: none;
+  background-color: rgb(239, 239, 239);
+  height: 40px;
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
+  transition: .5s;
+  font-size: 1.1rem;
+  font-family: 'Tilt Neon', cursive;
+}
+
+.input:hover {
+  background-color: rgb(209, 209, 209);
+}
+
+.input::placeholder {
+  position: relative;
+  left: 10px;
+  font-size: 1.1rem;
+  font-family: 'Tilt Neon', cursive;
+}
+
+.input:focus {
+  outline: none;
+}
