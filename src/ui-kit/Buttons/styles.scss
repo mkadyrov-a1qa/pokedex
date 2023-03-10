@@ -13,6 +13,10 @@
 .search-label {
   position: relative;
   top: 8px;
+
+  @media (max-width: 900px) {
+    margin: 0 8px 0 8px;
+  }
 }
 
 .search-button {

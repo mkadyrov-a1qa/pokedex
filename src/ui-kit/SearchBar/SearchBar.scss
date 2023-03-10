@@ -10,6 +10,10 @@
   transition: .5s;
   font-size: 1.1rem;
   font-family: 'Tilt Neon', cursive;
+
+  @media (max-width: 600px) {
+    width: auto;
+  }
 }
 
 .input:hover {

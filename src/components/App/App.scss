@@ -3,6 +3,14 @@
   width: 800px;
   margin: 0 auto;
   font-family: 'Tilt Neon', cursive;
+
+  @media (max-width: 900px) {
+    width: 400px;
+  }
+
+  @media (max-width: 600px) {
+    width: 270px;
+  }
 }
 
 .title {

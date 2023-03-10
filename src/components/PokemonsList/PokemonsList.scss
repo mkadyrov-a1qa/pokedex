@@ -5,6 +5,16 @@
   justify-items: center;
   align-items: center; 
   gap: 27px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: auto auto;
+    gap: 15px;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: auto;
+    gap: 10px;
+  }
 }
 
 .load-button-wrap {
