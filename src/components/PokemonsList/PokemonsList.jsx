@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { PokemonTile } from "../../ui-kit/PokemonTile/PokemonTile";
-import axios from "axios";
 import "./PokemonsList.scss";
 import { LoadButton } from "../../ui-kit/Buttons/LoadButton";
 
