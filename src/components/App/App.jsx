@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { PokemonsList } from "../PokemonsList/PokemonsList";
 import { Search } from "../SearchSection/Search";
 import { Modal } from "../../ui-kit/Modal/Modal";
+import { TailSpin } from "react-loader-spinner";
 import axios from "axios";
 import './App.scss';
 
@@ -13,6 +14,7 @@ export const App = () => {
   const [inputValue, setInputValue] = useState(null);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [isModalActive, setModalActive] = useState(false);
+  const [isFetchingData, setIsFetchingData] = useState(false);
 
   const getPokemons = async () => {
     const container = [];
@@ -21,6 +23,7 @@ export const App = () => {
       container.push(data.data);
     }
     setPokemons((prev) => [...prev, ...container]);
+    setIsFetchingData(false);
   };
 
   const getPokemonsBySearch = async () => {
@@ -37,6 +40,7 @@ export const App = () => {
   };
 
   const onLoadMoreClick = () => {
+    setIsFetchingData(true);
     setFromIndex(fromIndex + 10);
     setToIndex(toIndex + 10);
   };
@@ -52,10 +56,6 @@ export const App = () => {
           isModalActive && <Modal pokemon = {selectedPokemon} setModalActive={setModalActive} />
         }
         <div className="title">Pocedex</div>
-        <Search
-          getPokemonsBySearch={getPokemonsBySearch}
-          onInputChange={onInputChange}
-        />
         {!notFound ? (
           <PokemonsList
             fromIndex={fromIndex}
@@ -65,8 +65,18 @@ export const App = () => {
             onLoadMoreClick={onLoadMoreClick}
             setSelectedPokemon={setSelectedPokemon}
             setModalActive={setModalActive}
+            isFetchingData={isFetchingData}
           />
-        ) : null}
+        ) : <TailSpin
+              height="45"
+              width="45"
+              color="#61C3FF"
+              ariaLabel="tail-spin-loading"
+              radius="1"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+            />}
       </div>
     </>
   );
