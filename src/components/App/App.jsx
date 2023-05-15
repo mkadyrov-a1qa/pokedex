@@ -26,27 +26,10 @@ export const App = () => {
     setIsFetchingData(false);
   };
 
-  const getPokemonsBySearch = async () => {
-    if (inputValue !== "") {
-      const pokemonName = inputValue.toLowerCase();
-      const data = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`,
-      );
-      const pokemon = data.data;
-      setPokemons(() => [pokemon]);
-    } else {
-      return;
-    }
-  };
-
   const onLoadMoreClick = () => {
     setIsFetchingData(true);
     setFromIndex(fromIndex + 10);
     setToIndex(toIndex + 10);
-  };
-
-  const onInputChange = (e) => {
-    setInputValue(e.target.value);
   };
 
   return (
